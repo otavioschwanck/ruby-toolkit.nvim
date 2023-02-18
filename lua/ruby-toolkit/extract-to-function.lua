@@ -1,31 +1,13 @@
 local M = {}
 
-local tree_sitter_move = require("nvim-treesitter.textobjects.move")
-local tree_sitter_select = require("nvim-treesitter.textobjects.select")
 local input = require("ruby-toolkit.utils.input")
 local ask = input.ask
 local ask_y_or_n = input.ask_y_or_n
-
-local function private_line()
-  local buf_text = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-
-  for i = 1, #buf_text do
-    if string.match(buf_text[i], "private$") then
-      return i
-    end
-  end
-
-  return false
-end
-
-local function indent_cur_line()
-  vim.cmd("norm ==")
-end
-
-local function select_method()
-  vim.api.nvim_feedkeys("V", "x", true)
-  tree_sitter_select.select_textobject("@function.outer")
-end
+local helpers = require("ruby-toolkit.utils.helpers")
+local private_line = helpers.private_line
+local indent_cur_line = helpers.indent_cur_line
+local select_method = helpers.select_method
+local go_to_end_of_function = helpers.go_to_end_of_function
 
 function M.extract_to_function()
   local function_name = ask("Function name > ")
@@ -60,12 +42,12 @@ function M.extract_to_function()
 
         M.paste_function()
       else
-        tree_sitter_move.goto_next_end("@function.outer")
+        go_to_end_of_function()
 
         M.paste_function()
       end
     else
-      tree_sitter_move.goto_next_end("@function.outer")
+      go_to_end_of_function()
 
       M.paste_function()
     end
