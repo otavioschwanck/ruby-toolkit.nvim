@@ -4,10 +4,9 @@ local input = require("ruby-toolkit.utils.input")
 local helpers = require("ruby-toolkit.utils.helpers")
 local ask_not_null = input.ask_not_null
 local insert_private_or_next = helpers.insert_private_or_next
+local ts_utils = require('nvim-treesitter.ts_utils')
 
 function M.create_function_from_text()
-  local ts_utils = require('nvim-treesitter.ts_utils')
-
   local current_g = vim.fn.getreg("g")
   local current_p = vim.fn.getreg("p")
 
