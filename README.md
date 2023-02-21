@@ -41,6 +41,7 @@ Refactoring tools for Ruby and Ruby on rails.
   vim.keymap.set("v", "<leader>mf", "<cmd>lua require('ruby-toolkit').extract_to_function()<CR>")
   vim.keymap.set("n", "<leader>mf", "<cmd>lua require('ruby-toolkit').create_function_from_text()<CR>")
 end}
+```
 
 ## Lazy
 
@@ -54,5 +55,5 @@ end}
 
 # Roadmap
 
-[ ] - Telescope rails routes / insert routes / go to route controller.
-[ ] - Rails i18n search / insert.
+- Telescope rails routes / insert routes / go to route controller.
+- Rails i18n search / insert.
