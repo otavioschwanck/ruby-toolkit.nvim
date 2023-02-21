@@ -27,6 +27,4 @@ function M.extract_variable()
   end
 end
 
-vim.keymap.set("v", "<CR>", M.extract_variable)
-
 return M

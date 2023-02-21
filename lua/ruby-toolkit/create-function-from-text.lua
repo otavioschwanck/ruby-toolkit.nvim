@@ -52,14 +52,9 @@ function M.create_function_from_text()
     vim.fn.setreg("p", current_p)
 
     vim.cmd(helpers.term_codes('normal <C-o>'))
-
-    print("Method created. Press <C-i> to go back to then.")
   else
     print("you are not in a function call.")
   end
-
 end
-
-vim.keymap.set("n", "<CR>", M.create_function_from_text)
 
 return M

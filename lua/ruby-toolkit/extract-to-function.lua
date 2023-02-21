@@ -25,16 +25,10 @@ function M.extract_to_function()
     vim.fn.feedkeys("\"pygv\"gp==", "x")
 
     insert_private_or_next()
-
-    print("Function extracted. Press <C-o> to go back to it.")
   end
 
   vim.fn.setreg("g", current_g)
   vim.fn.setreg("p", current_p)
 end
-
--- private
-
-vim.keymap.set("v", "<CR>", M.extract_to_function)
 
 return M
