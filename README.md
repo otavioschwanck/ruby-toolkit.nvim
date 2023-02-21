@@ -6,6 +6,8 @@ Refactoring tools for Ruby and Ruby on rails.
 - [Ruby Toolkit](#ruby-toolkit)
 - [Demo](#demo)
   - [Extract Function](#extract-function)
+  - [Create function from word](#create-function-from-word)
+  - [Extract Variable](#extract-variable)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
   - [Packer](#packer)
