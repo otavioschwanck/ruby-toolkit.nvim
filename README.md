@@ -1,3 +1,7 @@
+# Ruby Toolkit
+
+Refactoring tools for Ruby and Ruby on rails.
+
 <!--toc:start-->
 - [Ruby Toolkit](#ruby-toolkit)
 - [Demo](#demo)
@@ -7,10 +11,6 @@
   - [Packer](#packer)
 - [Roadmap](#roadmap)
 <!--toc:end-->
-
-# Ruby Toolkit
-
-Refactoring tools for Ruby and Ruby on rails.
 
 # Demo
 
