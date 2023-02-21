@@ -42,7 +42,7 @@ function M.paste_function(no_body)
 
   if no_body then
     -- do nothing
-  elseif string.sub(vim.fn.getreg("*"), -1, -1) == "\n" then
+  elseif string.sub(vim.fn.getreg("p"), -1, -1) == "\n" then
     vim.api.nvim_feedkeys("\"pp", "x", true)
   else
     vim.cmd("norm o")
@@ -50,8 +50,6 @@ function M.paste_function(no_body)
   end
 
   if not(no_body) then
-    print("NAO TEM BODY CARAI")
-
     M.select_method()
 
     vim.api.nvim_feedkeys("=", "x", true)
