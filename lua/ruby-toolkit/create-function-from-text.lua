@@ -27,7 +27,7 @@ function M.create_function_from_text()
       for i=1,#children do
         local arg = ts_utils.get_node_text(children[i])[1]
 
-        if string.match(arg, "^%a+_*%a*$") then
+        if string.match(arg, "^_*%a+[_*%a*]*$") then
           table.insert(normalized_arguments, arg)
         else
           local new_arg = ask_not_null("Please inform the argument name for: " .. arg .. " > ")
